@@ -3,8 +3,6 @@ package learn.skypro.Internet.thestore.socks.model;
 import lombok.Data;
 
 @Data
-
-//@AllArgsConstructor
 public class Socks {
     private int cottonPart;
     private SocksColor socksColor;

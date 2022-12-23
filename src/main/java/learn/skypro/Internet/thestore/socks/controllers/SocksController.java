@@ -1,4 +1,5 @@
 package learn.skypro.Internet.thestore.socks.controllers;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import learn.skypro.Internet.thestore.socks.model.SocksColor;
@@ -28,7 +29,8 @@ public class SocksController {
         {
             if (socksService.addToStorage(socksColor, socksSize, cottonPart, quantity)) {
                 return ResponseEntity.status(HttpStatus.OK).body("Партия носков добавлена на склад");
-            }  return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Партия носков НЕ добавлена. Ошибка 400 - Bad Request");
+            }
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Партия носков НЕ добавлена. Ошибка 400 - Bad Request");
         }
     }
 

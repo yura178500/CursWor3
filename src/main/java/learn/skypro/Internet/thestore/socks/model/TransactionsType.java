@@ -5,5 +5,6 @@ public enum TransactionsType {
     INCOMING,
     OUTGOING,
     CANCELLATION
+    
 }
 

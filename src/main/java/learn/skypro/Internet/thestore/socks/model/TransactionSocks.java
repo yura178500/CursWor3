@@ -1,4 +1,5 @@
 package learn.skypro.Internet.thestore.socks.model;
+
 import lombok.Data;
 
 @Data

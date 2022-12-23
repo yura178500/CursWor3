@@ -64,7 +64,6 @@ public class TransactionRepository {
         }
         return json;
     }
-
     private TreeMap<Long, TransactionSocks> listFromFile() {
         try {
             String json = transactionsFileService.readTransactionsListFromJsonFile();

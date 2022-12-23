@@ -2,6 +2,7 @@ package learn.skypro.Internet.thestore.socks.impl;
 
 import learn.skypro.Internet.thestore.socks.services.TransactionsFileService;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -11,17 +12,18 @@ import java.nio.file.Path;
 
 @Service
 public class TransactionsFileServiceImpl implements TransactionsFileService {
-    @org.springframework.beans.factory.annotation.Value("${path.to.transactionsJson.file}")
+    @Value("${path.to.transactionsJson.file}")
     private String transactionsListFilePath;
 
-    @org.springframework.beans.factory.annotation.Value("${name.of.transactionsJson.file}")
+    @Value("${name.of.transactionsJson.file}")
     private String transactionsListFileName;
 
-    @org.springframework.beans.factory.annotation.Value("${path.to.transactionsTXT.file}")
+    @Value("${path.to.transactionsTXT.file}")
     private String transactionsTxtFilePath;
 
-    @org.springframework.beans.factory.annotation.Value("${name.of.transactionsTXT.file}")
+    @Value("${name.of.transactionsTXT.file}")
     private String transactionsTxtFileName;
+
     @Override
     public void cleanTransactionsListJson(){
         try {

@@ -17,6 +17,7 @@ import java.util.*;
 @Data
 @Repository
 public class StorageUnitRepository {
+
     static Long idCounter = 1L;
     private HashMap<Long, StorageUnit> storageUnitList = new HashMap<>();
 

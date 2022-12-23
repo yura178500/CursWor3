@@ -10,7 +10,6 @@ public interface TransactionsFileService {
     File getTxtFile();
 
     File getTransactionsListJson();
-
     void saveTransactionsListToJsonFile(String json);
 
     void saveTransactionsToTxtFile(String txt);
