@@ -7,6 +7,7 @@ public interface SocksService {
     int findByCottonPartLessThan(SocksColor socksColor,
                                  SocksSize socksSize,
                                  int cottonMin);
+
     int findByCottonPartMoreThan(SocksColor socksColor,
                                  SocksSize socksSize,
                                  int cottonMax);

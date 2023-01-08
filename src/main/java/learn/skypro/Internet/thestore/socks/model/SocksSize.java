@@ -11,7 +11,6 @@ public enum SocksSize {
 
     SocksSize(int shoe_size_min, int shoe_size_max) {
     }
-
     public int getShoe_size_min() {
         return shoe_size_min;
     }

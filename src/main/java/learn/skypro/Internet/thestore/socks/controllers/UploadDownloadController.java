@@ -22,7 +22,6 @@ import java.time.LocalDateTime;
 public class UploadDownloadController {
     private final SocksFileService socksFileService;
     private final TransactionsFileService transactionsFileService;
-
     public UploadDownloadController(SocksFileService socksFileService, TransactionsFileService transactionsFileService) {
         this.socksFileService = socksFileService;
         this.transactionsFileService = transactionsFileService;

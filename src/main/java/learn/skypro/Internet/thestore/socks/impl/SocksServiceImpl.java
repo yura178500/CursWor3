@@ -49,7 +49,6 @@ public class SocksServiceImpl implements SocksService {
                 socksSize,
                 quantity);
     }
-
     @Override
     public boolean delete(SocksColor socksColor,
                           SocksSize socksSize,

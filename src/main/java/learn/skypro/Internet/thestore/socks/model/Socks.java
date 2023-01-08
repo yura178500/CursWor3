@@ -8,7 +8,6 @@ public class Socks {
     private SocksColor socksColor;
     private SocksSize socksSize;
     private boolean inStock;
-
     public Socks(int cottonPart, SocksColor socksColor, SocksSize socksSize) {
         if (cottonPart > 0 && cottonPart <= 100) {
             this.cottonPart = cottonPart;

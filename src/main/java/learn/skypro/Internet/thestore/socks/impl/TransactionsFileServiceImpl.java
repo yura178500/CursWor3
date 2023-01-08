@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.function.BooleanSupplier;
 
 @Service
 public class TransactionsFileServiceImpl implements TransactionsFileService {
@@ -25,7 +26,7 @@ public class TransactionsFileServiceImpl implements TransactionsFileService {
     private String transactionsTxtFileName;
 
     @Override
-    public void cleanTransactionsListJson(){
+    public BooleanSupplier cleanTransactionsListJson(){
         try {
             Path path = Path.of(transactionsListFilePath, transactionsListFileName);
             Files.deleteIfExists(path);
@@ -33,6 +34,7 @@ public class TransactionsFileServiceImpl implements TransactionsFileService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
     @Override
     public void cleanTransactionsListTxt(){
@@ -59,22 +61,24 @@ public class TransactionsFileServiceImpl implements TransactionsFileService {
         return null;
     }
     @Override
-    public void saveTransactionsListToJsonFile(String json) {
+    public BooleanSupplier saveTransactionsListToJsonFile(String json) {
         try {
             cleanTransactionsListJson();
             Files.writeString(Path.of(transactionsListFilePath, transactionsListFileName), json);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
     @Override
-    public void saveTransactionsToTxtFile(String txt) {
+    public BooleanSupplier saveTransactionsToTxtFile(String txt) {
         try {
             cleanTransactionsListTxt();
             Files.writeString(Path.of(transactionsTxtFilePath, transactionsTxtFileName), txt);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
     @Override
     public String readTransactionsListFromJsonFile(){
@@ -87,5 +91,26 @@ public class TransactionsFileServiceImpl implements TransactionsFileService {
         }
         return null;
     }
-}
+    @Override
+    public String getTransactionsListFilePath() {
+        return transactionsListFilePath;
+    }
+    @Override
+    public String getTransactionsListFileName() {
+        return transactionsListFileName;
+    }
+    @Override
+    public String getTransactionsTxtFilePath() {
+        return transactionsTxtFilePath;
+    }
 
+    @Override
+    public boolean cleanTransactionsTxt() {
+        return false;
+    }
+
+    @Override
+    public String getTransactionsTxtFileName() {
+        return transactionsTxtFileName;
+    }
+}

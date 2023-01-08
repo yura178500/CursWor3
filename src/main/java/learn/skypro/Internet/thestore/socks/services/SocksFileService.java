@@ -1,12 +1,17 @@
 package learn.skypro.Internet.thestore.socks.services;
-
 import java.io.File;
+import java.util.function.BooleanSupplier;
+
 
 public interface SocksFileService {
-    void cleanSocksListJson();
+    boolean cleanSocksListJson();
+
     File getSocksListJson();
 
-    void saveSocksListToJsonFile(String json);
-
+    BooleanSupplier saveSocksListToJsonFile(String json);
     String readSocksListFromJsonFile();
+
+    String getSocksListFilePath();
+
+    String getSocksListFileName();
 }

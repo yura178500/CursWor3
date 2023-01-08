@@ -8,7 +8,6 @@ public class StorageUnit {
     private SocksColor socksColor;
     private SocksSize socksSize;
     private int quantity;
-
     public StorageUnit(int cottonPart,
                        SocksColor socksColor,
                        SocksSize socksSize,

@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.function.BooleanSupplier;
 
 @Service
 public class SocksFileServiceImpl implements SocksFileService {
@@ -19,7 +20,7 @@ public class SocksFileServiceImpl implements SocksFileService {
     private String socksListFileName;
 
     @Override
-    public void cleanSocksListJson() {
+    public boolean cleanSocksListJson() {
         try {
             Path path = Path.of(socksListFilePath, socksListFileName);
             Files.deleteIfExists(path);
@@ -27,6 +28,7 @@ public class SocksFileServiceImpl implements SocksFileService {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     @Override
@@ -35,13 +37,14 @@ public class SocksFileServiceImpl implements SocksFileService {
     }
 
     @Override
-    public void saveSocksListToJsonFile(String json) {
+    public BooleanSupplier saveSocksListToJsonFile(String json) {
         try {
             cleanSocksListJson();
             Files.writeString(Path.of(socksListFilePath, socksListFileName), json);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     @Override
@@ -55,5 +58,14 @@ public class SocksFileServiceImpl implements SocksFileService {
         }
         return null;
     }
+    @Override
+    public String getSocksListFilePath() {
+        return socksListFilePath;
+    }
+    @Override
+    public String getSocksListFileName() {
+        return socksListFileName;
+    }
+
 }
 

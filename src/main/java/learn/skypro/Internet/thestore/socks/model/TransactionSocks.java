@@ -20,6 +20,7 @@ public class TransactionSocks {
                             String dateCreateTransaction,
                             String timeCreateTransaction,
                             TransactionsType transactionsType) {
+
         this.cottonPart = cottonPart;
         this.socksColor = socksColor;
         this.socksSize = socksSize;

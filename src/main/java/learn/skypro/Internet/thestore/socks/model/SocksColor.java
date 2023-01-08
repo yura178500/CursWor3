@@ -8,7 +8,6 @@ public enum SocksColor {
     BLUE("синий"),
     BROWN("коричневый");
     private final String color;
-
     SocksColor(String color) {
         this.color = color;
     }

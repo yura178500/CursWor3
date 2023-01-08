@@ -1,18 +1,28 @@
 package learn.skypro.Internet.thestore.socks.services;
 
 import java.io.File;
+import java.util.function.BooleanSupplier;
+
 
 public interface TransactionsFileService {
-    void cleanTransactionsListJson();
-
+    BooleanSupplier cleanTransactionsListJson();
     void cleanTransactionsListTxt();
-
     File getTxtFile();
 
     File getTransactionsListJson();
-    void saveTransactionsListToJsonFile(String json);
 
-    void saveTransactionsToTxtFile(String txt);
+    BooleanSupplier saveTransactionsListToJsonFile(String json);
 
+    BooleanSupplier saveTransactionsToTxtFile(String txt);
     String readTransactionsListFromJsonFile();
+
+    String getTransactionsListFileName();
+
+    String getTransactionsListFilePath();
+
+    String getTransactionsTxtFileName();
+
+    String getTransactionsTxtFilePath();
+
+    boolean cleanTransactionsTxt();
 }

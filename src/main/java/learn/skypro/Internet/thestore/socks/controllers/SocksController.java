@@ -27,6 +27,7 @@ public class SocksController {
                                            @PathVariable("cottonPart") int cottonPart,
                                            @PathVariable("quantity") int quantity) {
         {
+
             if (socksService.addToStorage(socksColor, socksSize, cottonPart, quantity)) {
                 return ResponseEntity.status(HttpStatus.OK).body("Партия носков добавлена на склад");
             }
